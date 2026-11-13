@@ -1,0 +1,46 @@
+
+iterative binary search
+
+START
+Input sorted array and key
+Set low = 0
+Set high = n - 1
+
+WHILE low <= high
+    mid = (low + high) / 2
+
+    IF arr[mid] == key
+        Print element found
+        STOP
+
+    ELSE IF arr[mid] < key
+        low = mid + 1
+
+    ELSE
+        high = mid - 1
+
+Print element not found
+STOP
+
+
+
+  recursive binary 
+  
+START
+Input array, low, high and key
+
+IF low > high
+    Return -1
+
+mid = (low + high) / 2
+
+IF arr[mid] == key
+    Return mid
+
+ELSE IF arr[mid] < key
+    Search right half
+
+ELSE
+    Search left half
+
+STOP
