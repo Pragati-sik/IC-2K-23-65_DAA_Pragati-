@@ -1,0 +1,10 @@
+Time Complexity
+Algorithm                    Best Case Average Case Worst Case
+Binary Search.              O(1).       O(log n).     O(log n)
+Maximum and Minimum.        O(n).       O(n) O(n)
+Merge Sort.                 O(nlog n).  O(n log n).   O(n log n)
+Quick Sort.                 O(n log n)  O(n log n)    O(n²)
+
+this is the time complexity graph representated here .
+for merge dort, quick sort, max ,min, and binary search . 
+
