@@ -22,24 +22,6 @@ def iterative_search(arr, key):
     return -1
 
 
-# 3. Recursive Binary Search
-
-def recursive_search(arr, low, high, key):
-
-    if low > high:
-        return -1
-
-    mid = (low + high) // 2
-
-    if arr[mid] == key:
-        return mid
-
-    elif arr[mid] < key:
-        return recursive_search(arr, mid + 1, high, key)
-
-    else:
-        return recursive_search(arr, low, mid - 1, key)
-
 
 # Sorting array before binary search
 arr.sort()
