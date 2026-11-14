@@ -1,61 +1,19 @@
-def merge_sort(arr):
 
-    if len(arr) > 1:
+# Quick Sort Algorithm in Python
 
-        mid = len(arr) // 2
-
-        left = arr[:mid]
-        right = arr[mid:]
-
-        merge_sort(left)
-        merge_sort(right)
-
-        i = 0
-        j = 0
-        k = 0
-
-        while i < len(left) and j < len(right):
-
-            if left[i] < right[j]:
-                arr[k] = left[i]
-                i += 1
-
-            else:
-                arr[k] = right[j]
-                j += 1
-
-            k += 1
-
-        while i < len(left):
-            arr[k] = left[i]
-            i += 1
-            k += 1
-
-        while j < len(right):
-            arr[k] = right[j]
-            j += 1
-            k += 1
-
-
-arr = [38, 27, 43, 3, 9, 82, 10]
-
-merge_sort(arr)
-
-print("Sorted array:", arr)
-
-
-
-# quick sort.  
 def quick_sort(arr):
 
+    # Base condition
     if len(arr) <= 1:
         return arr
 
+    # Select first element as pivot
     pivot = arr[0]
 
     left = []
     right = []
 
+    # Divide elements into left and right lists
     for i in arr[1:]:
 
         if i <= pivot:
@@ -63,11 +21,25 @@ def quick_sort(arr):
         else:
             right.append(i)
 
+    # Recursively sort both lists
     return quick_sort(left) + [pivot] + quick_sort(right)
 
 
-arr = [40, 20, 10, 50, 30, 60]
+# Main program
+try:
+    # Take array input from user
+    arr = list(map(int, input("Enter array elements separated by spaces: ").split()))
 
-result = quick_sort(arr)
+    if not arr:
+        print("Error: Array cannot be empty.")
+    else:
+        print("Original array:", arr)
 
-print("Sorted array:", result)
+        # Call Quick Sort function
+        result = quick_sort(arr)
+
+        # Display sorted array
+        print("Sorted array:", result)
+
+except ValueError:
+    print("Error: Please enter only integer values.")
